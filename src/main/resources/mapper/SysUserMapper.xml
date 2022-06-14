@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.my_books.mapper.SysUserMapper">
+
+    <resultMap id="SysUserMap" type="com.example.my_books.model.SysUser">
+        <id property="id" column="id" jdbcType="INTEGER"/>
+        <result property="userName" column="user_name" jdbcType="VARCHAR"/>
+        <result property="password" column="password" jdbcType="VARCHAR"/>
+        <result property="start" column="start" jdbcType="INTEGER"/>
+        <result property="isAdmin" column="is_admin" jdbcType="INTEGER"/>
+        <result property="centerTime" column="center_time" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <select id="findListUserData" resultMap="SysUserMap">
+        select * from sys_user
+    </select>
+</mapper>
+
